@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pengumpul Data UPT</title><link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header><div class="header-inner"><div class="brand">Pengumpul Data UPT<small>Input • Verifikasi • PDF • Google Drive</small></div><button id="logoutBtn" class="btn secondary hidden">Keluar</button></div></header>
+<main>
+<section id="loginView" class="login card">
+<h2>Login UPT</h2><div id="loginMsg"></div>
+<label>UPT / Email</label><input id="email" type="email" placeholder="upt@contoh.go.id">
+<label>Password</label><input id="password" type="password">
+<div class="actions"><button id="loginBtn" class="btn">Masuk</button><button id="registerBtn" class="btn secondary">Daftar User</button></div>
+</section>
+
+<section id="appView" class="hidden">
+<div class="card">
+<h2>Form Pengumpulan Data</h2><div id="userInfo" class="notice"></div>
+<div id="appMsg"></div>
+<div class="grid">
+<div><label>Nama</label><input id="nama" readonly></div>
+<div><label>NIPP / NIPKWT</label><input id="nipp" readonly></div>
+<div><label>Jabatan</label><input id="jabatan" readonly></div>
+<div><label>UPT</label><input id="upt" readonly></div>
+<div><label>Tanggal Data</label><input id="tanggal" type="date"></div>
+<div><label>Waktu / Timestamp</label><input id="waktu" type="datetime-local"></div>
+</div>
+<label>Foto</label><input id="foto" type="file" accept="image/*" capture="environment">
+<img id="photoPreview" class="photo-preview hidden">
+<div id="dynamicFields"></div>
+<div class="actions"><button id="saveBtn" class="btn secondary">Simpan Draft</button><button id="submitBtn" class="btn">Submit untuk Verifikasi</button></div>
+</div>
+
+<div class="card">
+<h3>Data Saya</h3><div class="table-scroll"><table><thead><tr><th>Tanggal</th><th>Status</th><th>PDF</th><th>Aksi</th></tr></thead><tbody id="myRows"></tbody></table></div>
+</div>
+</section>
+
+<section id="registerView" class="login card hidden">
+<h2>Daftar User / UPT</h2><div id="regMsg"></div>
+<label>Email UPT</label><input id="regEmail" type="email">
+<label>Password</label><input id="regPassword" type="password">
+<label>Nama</label><input id="regNama">
+<label>NIPP / NIPKWT</label><input id="regNipp">
+<label>Jabatan</label><input id="regJabatan">
+<label>UPT</label><input id="regUpt">
+<div class="actions"><button id="createBtn" class="btn">Buat Akun</button><button id="backLoginBtn" class="btn secondary">Kembali</button></div>
+</section>
+</main>
+<footer>Versi MVP • Konfigurasi form dan Drive dapat dikembangkan melalui dashboard admin.</footer>
+
+<script type="module" src="app.js"></script>
+</body></html>
